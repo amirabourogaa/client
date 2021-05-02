@@ -26,6 +26,7 @@ export class Register extends Component {
         .catch((error)=> {
             console.log(error)
         })
+        navigation.navigate()
     }
 
     render() {
