@@ -1,16 +1,20 @@
 import React from 'react'
 import { Text, View, Button } from 'react-native'
 
+
 export default function Landing({ navigation }) {
     return (
         <View style={{ flex: 1, justifyContent:'center'}}>
-            <Text> Yaatek nam !!</Text>
+            <Text>HELLLOOOO</Text>
             <Button 
                 title="Register"
                 onPress={()=> navigation.navigate("Register")} />
             <Button 
                 title="Login"
-                onPress={()=> navigation.navigate("Login")} />
+                onPress={()=> navigation.navigate("Login") }/>
+
+            <Button 
+                title="zzzzz" />
 
         </View>
     )
