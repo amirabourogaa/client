@@ -41,7 +41,7 @@ export default function App() {
       <Stack.Screen name="Videos" component={Videos}/>
       <Stack.Screen name="Preview" component={Preview}/>
       <Stack.Screen name="SignIn" component={SignIn}/>
-      <Stack.Screen name="EditProfile" component={EditProfile}/>
+      <Stack.Screen name="EditProfile" component={EditProfile} options={{ headerShown: true , headerStyle : {backgroundColor : 'white'} ,headerTitle : 'Modifier votre profile', headerTitleStyle: {color : 'black'} }}/>
     </Stack.Navigator>
   </NavigationContainer>
    
