@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View, SafeAreaView, StyleSheet, Dimensions } from 'react-native'
+import { Text, View, SafeAreaView, StyleSheet, Dimension } from 'react-native'
 import bgImg from '../images/bgSignIn.jpg';
 import {
     Avatar,
@@ -9,15 +9,18 @@ import {
     TouchableRipple,
   } from 'react-native-paper';
   import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+  import firebase from'firebase';
 
 
 
 
   
-function Profile  ({navigation}) {
-
-    
-
+function Profile  ({ navigation }) {
+  const logout = () => {
+    firebase.auth()
+    .signOut()
+    .then(() => console.log('User signed out!'));
+  }
        
         return (
            
@@ -99,12 +102,22 @@ function Profile  ({navigation}) {
             <Text style={styles.menuItemText}>Les paramètres</Text>
           </View>
         </TouchableRipple>
-        <TouchableRipple onPress={() => {navigation.navigate('EditProfile')}}>
+       
+        <TouchableRipple  onPress={() => {navigation.navigate("EditProfile")}}>
+          
           <View style={styles.menuItem}>
             <Icon name="file-document-edit-outline" color="#FF6347" size={25}/>
             <Text style={styles.menuItemText}>Modifier</Text>
           </View>
         </TouchableRipple>
+        <TouchableRipple  onPress={() => logout()}>
+          
+          <View style={styles.menuItem}>
+            <Icon name="file-document-edit-outline" color="#FF6347" size={25}/>
+            <Text style={styles.menuItemText}>Se Déconnecter </Text>
+          </View>
+        </TouchableRipple>
+       
       </View>
             
             </SafeAreaView>

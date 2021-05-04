@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import {  Button, ImageBackground, StyleSheet,  View , Text, Image
- } from 'react-native';
+import {  Button, ImageBackground, StyleSheet,  View , Text, Image } from 'react-native';
 
 import bgImg from '../../images/animated1.gif';
 import FlatButton from '../Buttons/button';
 import LoginButton from '../Buttons/loginButton';
+
+
 
 
 
@@ -27,7 +28,7 @@ export default function Landing({ navigation }) {
                 onPress={()=> navigation.navigate("Register")} />
             <LoginButton 
                 text="Se Connecter"
-                onPress={()=> navigation.navigate("Profile")} />
+                onPress={()=> navigation.navigate("Login")} />
 {/*            
                  <Button 
                 title="Profile"
