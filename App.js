@@ -23,10 +23,15 @@ import { createStackNavigator } from '@react-navigation/stack';
 import LandingScreen from './components/auth/Landing'
 import RegisterScreen from './components/auth/Register'
 import LoginScreen from './components/auth/Login'
+import Profile from './Screens/Profile'
+import EditProfile from './Screens/EditProfileScreen'
+import VideosScreen from './Screens/Videos'
+import PreviewScreen from './Screens/Preview'
 
 
 
 const Stack = createStackNavigator();
+const Stacklog = createStackNavigator();
 
 export function App() {
   // Set an initializing state whilst Firebase connects
@@ -50,11 +55,6 @@ export function App() {
   if (initializing) return null;
   
   
-  const logout = () => {
-    firebase.auth()
-    .signOut()
-    .then(() => console.log('User signed out!'));
-  }
 
   
 
@@ -72,24 +72,34 @@ export function App() {
       return (
         <NavigationContainer>
          <Stack.Navigator initialRouteName="Landing">
-           <Stack.Screen name="Landing" component={LandingScreen} options={{ headerShown: true }}/>
-           <Stack.Screen name="Register" component={RegisterScreen}/>
-           <Stack.Screen name="Login" component={LoginScreen}/>
+           <Stack.Screen name="Bienvenue" component={LandingScreen} options={{ headerShown: true  }}/>
+           <Stack.Screen name="Register" component={RegisterScreen} options = {{title : 'Créer Un compte'}} />
+           <Stack.Screen name="Login" component={LoginScreen}  options = {{title : 'Se Connecter'}} />
           
-         </Stack.Navigator>
+           </Stack.Navigator>
        </NavigationContainer>
         
        );
     }else{
 
       return(
-       
-         <View style={{ flex: 1, justifyContent:'center'}}>
-              <Text>User is loggedInn herreee♥♥ {user.email}</Text>
-              <Button 
-              title="Log Out"
-              onPress={() => {logout()}}/>
-        </View>
+          <NavigationContainer>
+            <Stacklog.Navigator initialRouteName="Profile">
+            <Stacklog.Screen name="Profile" component={Profile} options={{ headerShown: true }}/>
+            <Stacklog.Screen name="EditProfile" component={EditProfile} options={{ headerShown: true , title : 'Modifier Votre Profil'}}/>
+            <Stacklog.Screen name="Videos" component={VideosScreen} options={{ headerShown: true , title : 'Mes Vidéos'}}/>
+            <Stacklog.Screen name="Preview" component={PreviewScreen} options={{ headerShown: true , title : 'Envoyer Mon Rapport'}}/>
+
+            </Stacklog.Navigator>
+          </NavigationContainer>
+          
+
+    //                 <View style={{ flex: 1, justifyContent:'center'}}>
+    // <Text>User is loggedInn herreee♥♥ {user.email}</Text>
+    //           <Button 
+    //           title="Log Out"
+    //           onPress={() => {logout()}}/> 
+    //     </View>
       )
     }
     
