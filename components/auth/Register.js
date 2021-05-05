@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {View, Button , TextInput } from 'react-native' 
+import {View, Button , TextInput, StyleSheet } from 'react-native' 
 import firebase from 'firebase'
 import SocialButton from '../design/SocialButton'
 import FormButton from '../design/FormButton';
@@ -90,7 +90,7 @@ export class Register extends Component {
                         />
 
 
-                              <FormButton
+                              <FormButton 
                                buttonTitle="S'enregistrer"
                                onPress={() => {this.onSignUp()}}
                              />

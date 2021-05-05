@@ -23,10 +23,11 @@ import { createStackNavigator } from '@react-navigation/stack';
 import LandingScreen from './components/auth/Landing'
 import RegisterScreen from './components/auth/Register'
 import LoginScreen from './components/auth/Login'
-
+import TestScreen from './components/auth/Test'
 
 
 const Stack = createStackNavigator();
+const Stackz = createStackNavigator();
 
 export function App() {
   // Set an initializing state whilst Firebase connects
@@ -50,11 +51,7 @@ export function App() {
   if (initializing) return null;
   
   
-  const logout = () => {
-    firebase.auth()
-    .signOut()
-    .then(() => console.log('User signed out!'));
-  }
+  
 
   
 
@@ -83,13 +80,11 @@ export function App() {
     }else{
 
       return(
-       
-         <View style={{ flex: 1, justifyContent:'center'}}>
-              <Text>User is loggedInn herreee♥♥ {user.email}</Text>
-              <Button 
-              title="Log Out"
-              onPress={() => {logout()}}/>
-        </View>
+        <NavigationContainer>
+          <Stackz.Navigator initialRouteName="Test">
+             <Stackz.Screen name="Test" component={TestScreen} />
+          </Stackz.Navigator>
+        </NavigationContainer>
       )
     }
     
