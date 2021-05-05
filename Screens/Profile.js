@@ -1,6 +1,5 @@
 import React from 'react'
-import { Text, View, SafeAreaView, StyleSheet, Dimension } from 'react-native'
-import bgImg from '../images/bgSignIn.jpg';
+import { Text, View, SafeAreaView, StyleSheet } from 'react-native'
 import {
     Avatar,
     Title,
@@ -77,13 +76,8 @@ function Profile  ({ navigation }) {
       </View>
 
       <View tyle={styles.menuWrapper}>
-      <TouchableRipple onPress={() => {}}>
-          <View style={styles.menuItem}>
-            <Icon name="heart-outline" color="#FF6347" size={25}/>
-            <Text style={styles.menuItemText}>Tes Favouris</Text>
-          </View>
-        </TouchableRipple>
-        <TouchableRipple onPress={() => {}}>
+     
+        <TouchableRipple onPress={() => {navigation.navigate('Videos')}}>
           <View style={styles.menuItem}>
             <Icon name="video-3d-variant" color="#FF6347" size={25}/>
             <Text style={styles.menuItemText}>Mes Vidéos</Text>
@@ -113,7 +107,7 @@ function Profile  ({ navigation }) {
         <TouchableRipple  onPress={() => logout()}>
           
           <View style={styles.menuItem}>
-            <Icon name="file-document-edit-outline" color="#FF6347" size={25}/>
+            <Icon name="logout-variant" color="#FF6347" size={25}/>
             <Text style={styles.menuItemText}>Se Déconnecter </Text>
           </View>
         </TouchableRipple>

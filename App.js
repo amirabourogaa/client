@@ -25,6 +25,8 @@ import RegisterScreen from './components/auth/Register'
 import LoginScreen from './components/auth/Login'
 import Profile from './Screens/Profile'
 import EditProfile from './Screens/EditProfileScreen'
+import VideosScreen from './Screens/Videos'
+import PreviewScreen from './Screens/Preview'
 
 
 
@@ -71,8 +73,8 @@ export function App() {
         <NavigationContainer>
          <Stack.Navigator initialRouteName="Landing">
            <Stack.Screen name="Bienvenue" component={LandingScreen} options={{ headerShown: true  }}/>
-           <Stack.Screen name="Register" component={RegisterScreen}/>
-           <Stack.Screen name="Login" component={LoginScreen}/>
+           <Stack.Screen name="Register" component={RegisterScreen} options = {{title : 'Créer Un compte'}} />
+           <Stack.Screen name="Login" component={LoginScreen}  options = {{title : 'Se Connecter'}} />
           
            </Stack.Navigator>
        </NavigationContainer>
@@ -84,7 +86,9 @@ export function App() {
           <NavigationContainer>
             <Stacklog.Navigator initialRouteName="Profile">
             <Stacklog.Screen name="Profile" component={Profile} options={{ headerShown: true }}/>
-            <Stacklog.Screen name="EditProfile" component={EditProfile} options={{ headerShown: true }}/>
+            <Stacklog.Screen name="EditProfile" component={EditProfile} options={{ headerShown: true , title : 'Modifier Votre Profil'}}/>
+            <Stacklog.Screen name="Videos" component={VideosScreen} options={{ headerShown: true , title : 'Mes Vidéos'}}/>
+            <Stacklog.Screen name="Preview" component={PreviewScreen} options={{ headerShown: true , title : 'Envoyer Mon Rapport'}}/>
 
             </Stacklog.Navigator>
           </NavigationContainer>

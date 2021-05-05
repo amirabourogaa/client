@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         margin: 4,
         opacity: 0.9,
-        marginTop : 250,
+        marginTop : 230,
         marginBottom : 20
      
     
