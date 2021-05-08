@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {  Button, ImageBackground, StyleSheet,  View , Text, Image } from 'react-native';
 
-import bgImg from '../../images/animated1.gif';
+import bgOrange from '../../images/bgOrange.jpg';
 import FlatButton from '../Buttons/button';
 import LoginButton from '../Buttons/loginButton';
 
@@ -12,11 +12,11 @@ import LoginButton from '../Buttons/loginButton';
 export default function Landing({ navigation }) {
 
     return (
-        <ImageBackground blurRadius = {2} style = {styles.backgroundContainer} source = {bgImg} >
+        <ImageBackground blurRadius = {2} style = {styles.backgroundContainer} source = {bgOrange} >
                  <View style = {styles.welcomeView}>
                <Image
-               style = {{width : 150, height: 150}}
-               source = {require ('../../images/logo.png')}
+               style = {{width :350, height: 350}}
+               source = {require ('../../images/healthy.png')}
                />
 
             </View>

@@ -77,10 +77,10 @@ function Profile  ({ navigation }) {
 
       <View tyle={styles.menuWrapper}>
      
-        <TouchableRipple onPress={() => {navigation.navigate('Videos')}}>
+        <TouchableRipple onPress={() => {navigation.navigate('Exercices')}}>
           <View style={styles.menuItem}>
             <Icon name="video-3d-variant" color="#FF6347" size={25}/>
-            <Text style={styles.menuItemText}>Mes Vidéos</Text>
+            <Text style={styles.menuItemText}>Mes Exercices</Text>
           </View>
         </TouchableRipple>
         <TouchableRipple onPress={() => {}}>
@@ -90,10 +90,10 @@ function Profile  ({ navigation }) {
           </View>
         </TouchableRipple>
         
-        <TouchableRipple onPress={() => {}}>
+        <TouchableRipple onPress={() => {navigation.navigate('Timer')}}>
           <View style={styles.menuItem}>
             <Icon name="account-settings-outline" color="#FF6347" size={25}/>
-            <Text style={styles.menuItemText}>Les paramètres</Text>
+            <Text style={styles.menuItemText}>Timer</Text>
           </View>
         </TouchableRipple>
        
@@ -113,6 +113,7 @@ function Profile  ({ navigation }) {
         </TouchableRipple>
        
       </View>
+    
             
             </SafeAreaView>
                

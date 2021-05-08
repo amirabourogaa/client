@@ -9,7 +9,7 @@ export default function Videos({ navigation }) {
            
         <Container>
              <Button iconLeft light>
-            <Icon name='logout' />
+            <Icon name='fruit-cherries-off' />
             <Text>Back</Text>
           </Button>
         <Video
