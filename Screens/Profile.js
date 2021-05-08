@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Text, View, SafeAreaView, StyleSheet } from 'react-native'
 import {
     Avatar,
@@ -14,13 +14,13 @@ import {
 
 
   
-function Profile  ({ navigation }) {
-  const logout = () => {
+export class Profile extends Component {
+  logout = () => {
     firebase.auth()
     .signOut()
     .then(() => console.log('User signed out!'));
   }
-       
+  render () {   
         return (
            
                 
@@ -77,27 +77,27 @@ function Profile  ({ navigation }) {
 
       <View tyle={styles.menuWrapper}>
      
-        <TouchableRipple onPress={() => {navigation.navigate('Exercices')}}>
+        <TouchableRipple onPress={() => {this.props.navigation.navigate('Exercices')}}>
           <View style={styles.menuItem}>
             <Icon name="video-3d-variant" color="#FF6347" size={25}/>
             <Text style={styles.menuItemText}>Mes Exercices</Text>
           </View>
         </TouchableRipple>
-        <TouchableRipple onPress={() => {}}>
+        <TouchableRipple onPress={() => {this.props.navigation.navigate("Vid")}}>
           <View style={styles.menuItem}>
             <Icon name="share-outline" color="#FF6347" size={25}/>
             <Text style={styles.menuItemText}>Envoyer</Text>
           </View>
         </TouchableRipple>
         
-        <TouchableRipple onPress={() => {navigation.navigate('Timer')}}>
+        <TouchableRipple onPress={() => {this.props.navigation.navigate('Timer')}}>
           <View style={styles.menuItem}>
             <Icon name="account-settings-outline" color="#FF6347" size={25}/>
             <Text style={styles.menuItemText}>Timer</Text>
           </View>
         </TouchableRipple>
        
-        <TouchableRipple  onPress={() => {navigation.navigate("EditProfile")}}>
+        <TouchableRipple  onPress={() => {this.props.navigation.navigate("EditProfile")}}>
           
           <View style={styles.menuItem}>
             <Icon name="file-document-edit-outline" color="#FF6347" size={25}/>
@@ -120,6 +120,7 @@ function Profile  ({ navigation }) {
     
            
         )
+  }
         
     
 }

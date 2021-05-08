@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import { Text, View, Button, StyleSheet} from 'react-native';
-import BackgroundTimer from 'react-native-background-timer';
 
 
 export default function Timer() {

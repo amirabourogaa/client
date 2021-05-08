@@ -27,7 +27,7 @@ import Timer from './components/Timer/Timer'
 import Profile from './Screens/Profile'
 import EditProfile from './Screens/EditProfileScreen'
 import ExercicesScreen from './Screens/Exercices'
-import Video from './Screens/Video'
+import VidScreen from './Screens/Vid'
 import PreviewScreen from './Screens/Preview'
 
 
@@ -91,7 +91,7 @@ export function App() {
             <Stacklog.Screen name="EditProfile" component={EditProfile} options={{ headerShown: true , title : 'Modifier Votre Profil'}}/>
             <Stacklog.Screen name="Exercices" component={ExercicesScreen} options={{ headerShown: true , title : 'Mes Exercices'}}/>
             <Stacklog.Screen name="Preview" component={PreviewScreen} options={{ headerShown: true , title : 'Envoyer Mon Rapport'}}/>
-            <Stacklog.Screen name="Video" component={Video} options={{ headerShown: true , title : 'Vidéo'}}/>
+            <Stacklog.Screen name="Video" component={VidScreen} options={{ headerShown: true , title : 'Vidéo'}}/>
             <Stacklog.Screen name="Timer" component={Timer} options={{ headerShown: true , title : 'Minuteur'}}/>
 
             </Stacklog.Navigator>
