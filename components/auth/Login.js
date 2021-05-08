@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
-import {View, Button , TextInput, TouchableOpacity, Image, StyleSheet } from 'react-native' 
-import firebase from 'firebase';
+import { View, Button , TextInput, TouchableOpacity, Image, StyleSheet } from 'react-native' 
+import firebase from 'firebase/app';
+import 'firebase/auth'
 import SocialButton from '../design/SocialButton';
 import FormButton from '../design/FormButton';
 import FormInput from '../design/FormInput';
 
-
 export class Login extends Component {
     constructor(props) {
         super(props);
+
             this.state = {
               email: '',
               password: ''
@@ -19,16 +20,19 @@ export class Login extends Component {
     }
     onSignIn() {
         const { email, password }= this.state;
-        
+        const navigation = this.props.navigation
         firebase.auth().signInWithEmailAndPassword(email, password)
         .then((result) => {
             console.log("i'm heeere")
             console.log(result)
+           
           
         })
         .catch((error)=> {
             console.log(error)
         })
+        
+        
     }
 
     render() {
