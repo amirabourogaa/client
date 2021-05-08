@@ -1,16 +1,10 @@
 import React, { Component } from 'react';
-import {  Button, ImageBackground, StyleSheet,  View , Text, Image } from 'react-native';
-
+import { Button, ImageBackground, StyleSheet,  View , Text, Image } from 'react-native';
 import bgImg from '../../images/animated1.gif';
 import FlatButton from '../Buttons/button';
 import LoginButton from '../Buttons/loginButton';
 
-
-
-
-
 export default function Landing({ navigation }) {
-
     return (
         <ImageBackground blurRadius = {2} style = {styles.backgroundContainer} source = {bgImg} >
                  <View style = {styles.welcomeView}>
@@ -21,8 +15,6 @@ export default function Landing({ navigation }) {
 
             </View>
             
-
-         
             <FlatButton 
                 text ="Creer Un Compte"
                 onPress={()=> navigation.navigate("Register")} />
