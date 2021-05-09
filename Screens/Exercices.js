@@ -1,7 +1,7 @@
 import React from 'react'
 import { Text, Image, StyleSheet,View } from 'react-native';
 import {TouchableRipple} from 'react-native-paper'
-import { Container, Header, DeckSwiper, Card, CardItem, Thumbnail, Left, Body,  Button } from 'native-base';
+import { Container,  DeckSwiper, Card, CardItem, Thumbnail, Left, Body,  Button } from 'native-base';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 

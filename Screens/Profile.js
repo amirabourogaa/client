@@ -1,29 +1,38 @@
 import React, { Component } from 'react'
 import { Text, View, SafeAreaView, StyleSheet } from 'react-native'
+import firebase from 'firebase/app';
+import 'firebase/auth'
 import {
     Avatar,
     Title,
     Caption,
-   
     TouchableRipple,
   } from 'react-native-paper';
   import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-  import firebase from'firebase';
+ 
+  import { connect } from 'react-redux';
+  import { bindActionCreators } from 'redux';
+  import { fetchUser } from '../redux/actions/index';
 
-
-
-
-  
+ 
 export class Profile extends Component {
+  constructor(props) {
+    super(props);
+  }
+  
+  componentDidMount() {
+    this.props.fetchUser();
+    //console.log(this.props.navigation)
+  }
+  
+  
   logout = () => {
     firebase.auth()
     .signOut()
     .then(() => console.log('User signed out!'));
   }
-  render () {   
+       render() {
         return (
-           
-                
             <SafeAreaView style = {styles.container}>
                 
                 <View style = {styles.userInfoSection}>
@@ -77,7 +86,7 @@ export class Profile extends Component {
 
       <View tyle={styles.menuWrapper}>
      
-        <TouchableRipple onPress={() => {this.props.navigation.navigate('Exercices')}}>
+        <TouchableRipple onPress={() => {this.props.navigation.navigate("Videos")}}>
           <View style={styles.menuItem}>
             <Icon name="video-3d-variant" color="#FF6347" size={25}/>
             <Text style={styles.menuItemText}>Mes Exercices</Text>
@@ -104,7 +113,7 @@ export class Profile extends Component {
             <Text style={styles.menuItemText}>Modifier</Text>
           </View>
         </TouchableRipple>
-        <TouchableRipple  onPress={() => logout()}>
+        <TouchableRipple  onPress={() => this.logout()}>
           
           <View style={styles.menuItem}>
             <Icon name="logout-variant" color="#FF6347" size={25}/>
@@ -122,14 +131,17 @@ export class Profile extends Component {
         )
   }
         
+        }
+      
     
-}
+const mapDispatchProps =  (dispatch) => bindActionCreators({fetchUser}, dispatch);
 
-export default Profile
+export default connect (null,mapDispatchProps)(Profile)
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        
       },
       userInfoSection: {
         paddingHorizontal: 30,

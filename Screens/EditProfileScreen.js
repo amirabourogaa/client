@@ -143,6 +143,7 @@ function EditProfileScreen() {
           <TextInput
             placeholder="Prénom"
             placeholderTextColor="#666666"
+            
             autoCorrect={false}
             style={[
               styles.textInput,
@@ -244,6 +245,7 @@ export default EditProfileScreen;
 const styles = StyleSheet.create({
     container : {
       flex: 1,
+      padding:20
     },
     commandButton: {
       padding: 15,

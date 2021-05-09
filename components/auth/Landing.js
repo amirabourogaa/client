@@ -5,12 +5,7 @@ import bgOrange from '../../images/bgOrange.jpg';
 import FlatButton from '../Buttons/button';
 import LoginButton from '../Buttons/loginButton';
 
-
-
-
-
 export default function Landing({ navigation }) {
-
     return (
         <ImageBackground blurRadius = {2} style = {styles.backgroundContainer} source = {bgOrange} >
                  <View style = {styles.welcomeView}>
@@ -21,8 +16,6 @@ export default function Landing({ navigation }) {
 
             </View>
             
-
-         
             <FlatButton 
                 text ="Creer Un Compte"
                 onPress={()=> navigation.navigate("Register")} />
