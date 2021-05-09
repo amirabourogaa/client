@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Dimensions,Button,Text, View, ImageBackground, StyleSheet } from 'react-native'
-import bgImg from '../images/bgSignIn.jpg';
-import AppLoading from 'expo-app-loading';
+
 import { Video } from 'expo-av'
 import * as FileSystem from 'expo-file-system';
 
@@ -73,7 +72,7 @@ export default function Vid() {
             rate={1.0}
             volume={1.0}
             isMuted={false}
-            resizeMode="cover"
+            resizeMode="absolute"
             shouldPlay={false}
             isLooping={false}
             useNativeControls
@@ -83,6 +82,7 @@ export default function Vid() {
         <Button title={buttonTitle} onPress={downloadVideo}></Button>
         <Text style = {{fontSize:20}}> Size: {totalSize} </Text>
         <Text>Progress: {progressValue} %</Text>
+    
         </View>
     
     );

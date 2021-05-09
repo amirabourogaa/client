@@ -66,13 +66,13 @@ export default function Exercices({ navigation }) {
                style = {{width :100, height: 100, marginLeft : 200}}
                source = {require ('../images/swipe.gif')}
                />
-      <TouchableRipple onPress={() => {navigation.navigate('Video')}}>
+      <TouchableRipple onPress={() => {navigation.navigate('Timer')}}>
           <View style={styles.menuItem}>
             <Icon name="eye-plus-outline" color="#FF6347" size={25}/>
             <Text style={styles.menuItemText}>Voir La Vidéo</Text>
           </View>
         </TouchableRipple>
-        <TouchableRipple onPress={() => {}}>
+        <TouchableRipple onPress={() => {navigation.navigate('Preview')}}>
           <View style={styles.menuItem}>
             <Icon name="newspaper-variant-multiple-outline" color="#FF6347" size={25}/>
             <Text style={styles.menuItemText}>Mon Rapport </Text>

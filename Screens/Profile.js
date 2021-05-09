@@ -86,25 +86,20 @@ export class Profile extends Component {
 
       <View tyle={styles.menuWrapper}>
      
-        <TouchableRipple onPress={() => {this.props.navigation.navigate("Videos")}}>
+        <TouchableRipple onPress={() => {this.props.navigation.navigate("Exercices")}}>
           <View style={styles.menuItem}>
             <Icon name="video-3d-variant" color="#FF6347" size={25}/>
             <Text style={styles.menuItemText}>Mes Exercices</Text>
           </View>
         </TouchableRipple>
-        <TouchableRipple onPress={() => {this.props.navigation.navigate("Vid")}}>
+        <TouchableRipple onPress={() => {}}>
           <View style={styles.menuItem}>
-            <Icon name="share-outline" color="#FF6347" size={25}/>
-            <Text style={styles.menuItemText}>Envoyer</Text>
+            <Icon name="notification-clear-all" color="#FF6347" size={25}/>
+            <Text style={styles.menuItemText}>Notifications</Text>
           </View>
         </TouchableRipple>
         
-        <TouchableRipple onPress={() => {this.props.navigation.navigate('Timer')}}>
-          <View style={styles.menuItem}>
-            <Icon name="account-settings-outline" color="#FF6347" size={25}/>
-            <Text style={styles.menuItemText}>Timer</Text>
-          </View>
-        </TouchableRipple>
+       
        
         <TouchableRipple  onPress={() => {this.props.navigation.navigate("EditProfile")}}>
           

@@ -22,16 +22,7 @@ export default function Landing({ navigation }) {
             <LoginButton 
                 text="Se Connecter"
                 onPress={()=> navigation.navigate("Login")} />
-{/*            
-                 <Button 
-                title="Profile"
-                onPress={()=> navigation.navigate("Profile")} />
-                 <Button 
-                title="Videos"
-                onPress={()=> navigation.navigate("Videos")} />
-                 <Button 
-                title="Preview"
-                onPress={()=> navigation.navigate("Preview")} /> */}
+
 
         </ImageBackground>
     )

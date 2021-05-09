@@ -13,8 +13,10 @@ import { createStackNavigator } from '@react-navigation/stack'
 import LandingScreen from './components/auth/Landing'
 import RegisterScreen from './components/auth/Register'
 import LoginScreen from './components/auth/Login'
+import Timerr from './components/Timer/Timer';
 import Profile from './Screens/Profile'
 import EditProfile from './Screens/EditProfileScreen'
+import Exercices from './Screens/Exercices'
 import VideosScreen from './Screens/Vdo'
 import PreviewScreen from './Screens/Preview'
 import { NavigationContainer } from '@react-navigation/native'
@@ -84,6 +86,8 @@ export function App() {
                 <Stacklog.Screen name="Profile" component={Profile} options={{ headerShown: true }}/>
                 <Stacklog.Screen name="EditProfile" component={EditProfile} options={{ headerShown: true , title : 'Modifier Votre Profil'}}/>
                 <Stacklog.Screen name="Videos" component={VideosScreen} options={{ headerShown: true , title : 'Mes Vidéos'}}/>
+                <Stacklog.Screen name="Exercices" component={Exercices} options={{ headerShown: true , title : 'Mes Exercices'}}/>
+                <Stacklog.Screen name="Timer" component={Timerr} options={{ headerShown: true , title : 'Mes Vidéos'}}/>
                 <Stacklog.Screen name="Preview" component={PreviewScreen} options={{ headerShown: true , title : 'Envoyer Mon Rapport'}}/>
               </Stacklog.Navigator>
               :
